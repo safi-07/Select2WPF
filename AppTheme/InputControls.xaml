@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
+                    >
+    <System:Double x:Key="InputControlFontSize">12</System:Double>
+    <Thickness x:Key="InputControlMargin">5,0,0,0</Thickness>
+    <HorizontalAlignment x:Key="InputControlHorizontalAlignment">Stretch</HorizontalAlignment>
+    <VerticalAlignment x:Key="InputControlVerticalContentAlignment">Center</VerticalAlignment>
+    <System:Double x:Key="InputControlMaxWidth">500</System:Double>
+    <System:Double x:Key="InputControlHeight">40</System:Double>
+    <Dock x:Key="InputControlDock">Bottom</Dock>
+
+</ResourceDictionary>

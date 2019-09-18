@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ac="clr-namespace:Helpers.CControls;assembly=Helpers"
+                    >
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml" />
+        <ResourceDictionary Source="InputControls.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="TextBoxesCustomStyle" TargetType="TextBox">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Margin" Value="{StaticResource InputControlMargin}"/>
+        <Setter Property="FontSize" Value="{StaticResource InputControlFontSize}" />
+        <Setter Property="DockPanel.Dock" Value="{StaticResource InputControlDock}"/>
+        <Setter Property="VerticalContentAlignment" Value="{StaticResource InputControlVerticalContentAlignment}" />
+        <Setter Property="Height" Value="{StaticResource InputControlHeight}" />
+       
+    </Style>
+    <Style x:Key="TextAreaCustomStyle" TargetType="TextBox">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Margin" Value="{StaticResource InputControlMargin}"/>
+        <Setter Property="FontSize" Value="{StaticResource InputControlFontSize}" />
+        <Setter Property="DockPanel.Dock" Value="{StaticResource InputControlDock}"/>
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="{StaticResource InputControlHorizontalAlignment}" />
+        <Setter Property="Height" Value="200" />
+    </Style>
+</ResourceDictionary>

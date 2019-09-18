@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Borders.xaml" />
+        <ResourceDictionary Source="Buttons.xaml" />
+        <ResourceDictionary Source="Charts.xaml" />
+        <ResourceDictionary Source="CheckBoxes.xaml" />
+        <ResourceDictionary Source="Colors.xaml" />
+        <ResourceDictionary Source="ComboBoxes.xaml" />
+        <ResourceDictionary Source="CustomAccordion.xaml" />
+        <ResourceDictionary Source="DataGrids.xaml" />
+        <ResourceDictionary Source="DatePicker.xaml" />
+        <ResourceDictionary Source="DockPanel.xaml" />
+        <ResourceDictionary Source="Grids.xaml" />
+        <ResourceDictionary Source="GroupBox.xaml" />
+        <ResourceDictionary Source="Images.xaml" />
+        <ResourceDictionary Source="Labels.xaml" />
+        <ResourceDictionary Source="MDashboardStyle.xaml" />
+        <ResourceDictionary Source="NumericUpDown.xaml" />
+        <ResourceDictionary Source="RadioButton.xaml" />
+        <ResourceDictionary Source="ScrollViewer.xaml" />
+        <ResourceDictionary Source="StackPanel.xaml" />
+        <ResourceDictionary Source="TabControls.xaml" />
+        <ResourceDictionary Source="TabItems.xaml" />
+        <ResourceDictionary Source="TextBlocks.xaml" />
+        <ResourceDictionary Source="TextBoxes.xaml" />
+        <ResourceDictionary Source="TimePicker.xaml" />
+        <ResourceDictionary Source="ToggleButton.xaml" />
+        <ResourceDictionary Source="UserControls.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

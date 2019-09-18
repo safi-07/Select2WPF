@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="Helpers.CustomControls.AutoComplete.CustomAutoCompleteTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ac="clr-namespace:AutoCompleteTextBox.Editors;assembly=AutoCompleteTextBox"
+             xmlns:cpc="clr-namespace:Helpers.CustomControls.AutoComplete.CustomPopupControl"
+             mc:Ignorable="d" 
+             Name="AutoCompleteUC"
+             d:DesignHeight="550" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Helpers;component/CustomControls/AutoComplete/Styles/CustomStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate x:Key="ItemTemplate">
+                <Grid>
+                    <TextBlock Text="{Binding Path=SearchText}"></TextBlock>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBox 
+                x:Name="SupportiveTextBox" 
+                Grid.Row="0"  
+                IsReadOnly="True"
+                Height="40"
+                PreviewKeyDown="SupportiveTextBox_PreviewKeyDown"
+                PreviewMouseDown="SupportiveTextBox_MouseDown"
+                  >
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid>
+                        <TextBox Text="{TemplateBinding Text}"/>
+                        <Image Margin="0,0,5,0" 
+                           Source="/Helpers;component/CustomControls/AutoComplete/Resources/Images/caret-down.png" 
+                           Width="15" 
+                           Height="15"
+                           HorizontalAlignment="Right"/>
+                    </Grid>
+                </ControlTemplate>
+            </TextBox.Template>
+
+        </TextBox>
+        <cpc:PopupNonTopmost x:Name="SuggestionsBoxPopup"
+                                   Grid.Row="1"
+                                   HorizontalAlignment="Stretch"
+                                   Height="Auto"
+                                   IsOpen="False"
+                                   PlacementTarget="{Binding ElementName=SupportiveTextBox}"
+                                   Placement="Bottom"
+                                   Width="{Binding ActualWidth, ElementName=SupportiveTextBox}"
+                                   AllowsTransparency="True"
+                                   PopupAnimation="Slide"
+                                   Focusable="False">
+            <ac:AutoCompleteTextBox  
+                x:Name="SuggestionsBox"
+                Watermark="Search..."
+                HorizontalAlignment="Stretch"
+                Text=""
+                Style="{StaticResource MaterialAutoCompleteTextBox}"
+                MaxLength="50" 
+                CharacterCasing="Normal"
+                DisplayMember="SearchText"
+                PreviewKeyDown="SuggestionsBox_PreviewKeyDown"
+                ItemTemplate="{StaticResource ResourceKey=ItemTemplate}"
+                >
+                <ac:AutoCompleteTextBox.SelectedItem>
+                    <Binding Path="SelectedItem" Mode="OneWayToSource" UpdateSourceTrigger="PropertyChanged">
+                    </Binding>
+                </ac:AutoCompleteTextBox.SelectedItem>
+                <ac:AutoCompleteTextBox.LoadingContent>
+                    <TextBlock Text="Loading..." Margin="5" FontSize="14" />
+                </ac:AutoCompleteTextBox.LoadingContent>
+            </ac:AutoCompleteTextBox>
+        </cpc:PopupNonTopmost>
+    </Grid>
+</UserControl>
